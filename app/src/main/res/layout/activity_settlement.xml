@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".activity.SettlementActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTopCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total amount"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTotalAmtToPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end|right"
+                    android:text="0.0"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Remaining balance"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvRemainingAmtToPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end|right"
+                    android:text="0.0"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cvTopCard"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewFops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <CheckBox
+                        android:id="@+id/cbCash"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:text="Cash"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilCashAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etCash"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginRight="20dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:hint="Please enter cash"
+                            android:inputType="numberDecimal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+                    <CheckBox
+                        android:id="@+id/cbCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:text="Card"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilCardDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/etCardDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginRight="20dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:hint="Please enter card details"
+                            android:inputType="numberDecimal" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <CheckBox
+                        android:id="@+id/cbSvCoupon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".9"
+                        android:text="SV Coupon"
+                        android:textColor="#000000"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:id="@+id/lilySVCoupon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvSVAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="SV Coupon Amount"
+                            android:textSize="20sp" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilSVCoupon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            >
+
+                            <EditText
+                                android:id="@+id/etSVCouponDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginRight="20dp"
+                                android:hint="Please enter SV Coupon amount"
+                                android:inputType="numberDecimal" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btnSettleFop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rect_print_reprint_btn_bg"
+                        android:text="Settle"
+                        android:textColor="#000000" />
+
+                    <Button
+                        android:id="@+id/btnCancelFop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rect_print_reprint_btn_bg"
+                        android:text="Cancel"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+</RelativeLayout>

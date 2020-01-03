@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPluDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/html_lightGray"
+            android:padding="3dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPluName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plu Name"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvPluPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPluName"
+                android:layout_alignParentBottom="true"
+                android:gravity="end|bottom"
+                android:text="Plu Price"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

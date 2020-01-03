@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:id="@+id/lilyTopLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#FFE4B2"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/viewDefault"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/lilyItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@color/html_x11_gray"
+                android:layout_gravity="top"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/tvQuantity"
+                    android:layout_toRightOf="@+id/tvQuantity"
+                    android:layout_weight="1"
+                    android:gravity="left|start"
+                    android:text="Item Name"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tvSelectedTotalQuantity"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tvRate"
+                    android:layout_toStartOf="@+id/tvRate"
+                    android:layout_weight="1"
+                    android:gravity="right|end"
+                    android:text="Qty"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tvRate"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tvTaxAmount"
+                    android:layout_toStartOf="@+id/tvTaxAmount"
+                    android:layout_weight="1"
+                    android:gravity="right|end"
+                    android:text="Rate"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tvTaxAmount"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tvAmount"
+                    android:layout_toStartOf="@+id/tvAmount"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    android:gravity="right|end"
+                    android:text="Tax"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/tvAmount"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:gravity="right|end"
+                    android:text="Amount"
+                    android:textColor="#000000" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/viewTopHeader"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_above="@+id/recyclerViewSelectedItemList"
+                android:background="@color/colorAccent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSelectedItemList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/lilyItemDescription"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/viewDefault"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/lilyAddTotal"
+            android:background="@color/colorAccent" />
+
+        <RelativeLayout
+            android:id="@+id/lilyAddTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnAddQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rect_add_remove_bg"
+                android:text="+"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnRemoveQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:layout_toEndOf="@id/btnAddQuantity"
+                android:layout_toRightOf="@id/btnAddQuantity"
+                android:background="@drawable/rect_add_remove_bg"
+                android:text="-"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvTotalAmount"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:gravity="end|right"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/viewRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/recyclerViewPlu"
+        android:background="@color/colorAccent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPlu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/lilyButtons"
+        android:layout_below="@id/lilyTopLayout"
+        />
+
+    <LinearLayout
+        android:id="@+id/lilyButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btnSettle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rect_print_reprint_btn_bg"
+            android:text="Settle"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnRePrint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rect_print_reprint_btn_bg"
+            android:text="Re-Print"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnVoid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/rect_print_reprint_btn_bg"
+            android:text="Void"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
